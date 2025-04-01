@@ -1,0 +1,70 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 10%; /* Dark background */
+    --foreground: 0 0% 98%; /* Light text */
+
+    --card: 0 0% 13%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 13%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 358 92.4% 47.1%; /* Netflix red */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 19%; /* Dark gray */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 19%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 358 92.4% 47.1%; /* Netflix red */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 19%;
+    --input: 0 0% 19%;
+    --ring: 358 92.4% 47.1%; /* Netflix red */
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .netflix-card-hover {
+    @apply transition-all duration-300 ease-in-out transform hover:scale-105;
+  }
+  
+  .netflix-hero {
+    @apply relative h-[80vh] w-full overflow-hidden;
+  }
+  
+  .netflix-gradient {
+    @apply absolute inset-0 bg-gradient-to-t from-background to-transparent;
+  }
+  
+  .netflix-button {
+    @apply bg-netflix hover:bg-netflix-light text-white font-bold py-2 px-4 rounded transition-colors;
+  }
+
+  .netflix-section {
+    @apply py-8 px-4 md:px-6 lg:px-8;
+  }
+}
